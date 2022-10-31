@@ -12,7 +12,7 @@ const banco1 = new Banco(1, 'brou', 10, 15, 20)
 const banco2 = new Banco(2, 'santander', 8, 16, 24)
 const banco3 = new Banco(3, 'itau', 13, 19, 25)
 
-//console.log(banco1, banco2, banco3)
+console.log(banco1, banco2, banco3)
 
 let opcion = parseInt(prompt('Ingrese el numero del banco que desea. 1- BROU | 2- Santander | 3- Itau'))
 
