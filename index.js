@@ -1,53 +1,80 @@
-class Banco{        //Informacion de los bancos
-    constructor(id, nombre, interesA12, interesA24, interesA36){
+class Zapatilla{        
+    constructor(id, marca, nombre, precio, stock){
         this.id = id
+        this.marca = marca
         this.nombre = nombre
-        this.interesA12 = interesA12
-        this.interesA24 = interesA24
-        this.interesA36 = interesA36
+        this.precio = precio
+        this.stock = stock
     }
 }
 
-const banco1 = new Banco(1, 'brou', 10, 15, 20)
-const banco2 = new Banco(2, 'santander', 8, 16, 24)
-const banco3 = new Banco(3, 'itau', 13, 19, 25)
+const zapatilla1 = new Zapatilla(1, 'puma', 'incinerate', 1500, 15)
+const zapatilla2 = new Zapatilla(2, 'nike', 'airmax', 2000, 10)
+const zapatilla3 = new Zapatilla(3, 'nike', 'vapormax', 2500, 8)
+const zapatilla4 = new Zapatilla(4, 'adidas', 'supernova', 1300, 20)
+const zapatilla5 = new Zapatilla(5, 'adidas', 'coreracer', 1800, 20)
 
-console.log(banco1, banco2, banco3)
+const disponible = [zapatilla1, zapatilla2, zapatilla3, zapatilla4, zapatilla5]
+const carro = []
 
-let opcion = parseInt(prompt('Ingrese el numero del banco que desea. 1- BROU | 2- Santander | 3- Itau'))
+let catalogo = 'Tenemos en stock: \n'
 
-let condicion = false
-let infoOpcion
+function agregarCarro (){
 
-while(condicion === false){ //se repite hasta q ingrese un valor correcto
-    if (opcion === banco1.id){
-        condicion = true
-        infoOpcion = banco1
-    }else if (opcion === banco2.id){
-        condicion = true
-        infoOpcion = banco2
-    }else if (opcion === banco3.id){
-        condicion = true
-        infoOpcion = banco3
-    }else{
-        alert('El valor ingressado es incorrecto, intente nuevamente')
-        let opcion = parseInt(prompt('Ingrese el numero del banco que desea. 1- BROU | 2- Santander | 3- Itau'))
+    for(item of disponible){
+        catalogo += `\n ${item.id}- ${item.marca} ${item.nombre} por $${item.precio}`
     }
+
+    catalogo += '\n\n Para finalizar la compra ingrese 99'
+
+    let respuesta = parseInt(prompt(catalogo))
+
+    while(isNaN(respuesta)){
+        alert(`Solo puede ingresar numeros`)
+        respuesta = parseInt(prompt(catalogo))
+    }
+
+    while(respuesta != 99){
+        switch(respuesta){
+            case 1:
+                carro.push(disponible[0])
+                alert(`Se agrego el carrito ${disponible[0].marca} ${disponible[0].nombre}`)
+                break;
+            case 2:
+                carro.push(disponible[1])
+                alert(`Se agrego el carrito ${disponible[1].marca} ${disponible[1].nombre}`)
+                break;
+            case 3:
+                carro.push(disponible[2])
+                alert(`Se agrego el carrito ${disponible[2].marca} ${disponible[2].nombre}`)
+                break;
+            case 4:
+                carro.push(disponible[3])
+                alert(`Se agrego el carrito ${disponible[3].marca} ${disponible[3].nombre}`)
+                break;
+            case 5:
+                carro.push(disponible[4])
+                alert(`Se agrego el carrito ${disponible[4].marca} ${disponible[4].nombre}`)
+                break;
+            default:
+                    alert('Esa opcion no esta disponible')
+        }
+        respuesta = parseInt(prompt(catalogo))
+    }
+    alert('Se cerro tu pedido')
+    mostrarCarro()
 }
 
-//console.log(infoOpcion)
+let zapatillaCarro = 'Vas a llevar'
+let precioCarro = 0
 
-let valorPrestamo = parseInt(prompt('Ingrese el monto de su prestamo'))
+function mostrarCarro(){
+    for(itemElegido of carro){
+        zapatillaCarro += `\n - ${itemElegido.marca} ${itemElegido.nombre}`
+        precioCarro += itemElegido.precio
+    }
 
-const costo = (valor, intereses, meses) =>{ //funcion para calcular cuota 
-    const calculo = (valor+((valor*intereses)/100))/meses
-    return calculo
+    alert(`${zapatillaCarro} \n El total es: $${precioCarro}`)
 }
 
-const cuotaA12 = costo(valorPrestamo, infoOpcion.interesA12, 12)
-const cuotaA24 = costo(valorPrestamo, infoOpcion.interesA24, 24)
-const cuotaA36 = costo(valorPrestamo, infoOpcion.interesA36, 36)
-
-//console.log(cuotaA12)
-
-alert('El banco '+ infoOpcion.nombre +' le ofrece cuotas mensuales a 12 meses de '+ cuotaA12 +', a 24 meses de '+ cuotaA24 +' y a 36 meses de '+ cuotaA36)
+agregarCarro()
