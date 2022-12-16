@@ -1,0 +1,30 @@
+header{
+    height: 130px;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    margin: 5px;
+    height: 100px;
+    width: 200px;
+}
+
+#btnCarrito{
+    margin: 5px;
+    font-size: 30px;
+}
+
+#catalogo{
+    margin-top: 30px
+}
+
+.row{
+    justify-content: center;
+}
+
+.card{
+    margin: 5px;
+}

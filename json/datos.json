@@ -4,62 +4,71 @@
        "nombre": "Cien años de soledad",
        "autor": "Gabriel García Márquez",
        "precio": 950,
-       "imagen": "./img/logo.png"
+       "stock":10,
+       "imagen": "logo.png"
     },
     {
         "id": 2,
         "nombre": "1984",
         "autor": "George Orwell",
         "precio": 950,
-        "imagen": "./img/logo.png"
+        "stock":10,
+        "imagen": "logo.png"
      },
      {
         "id": 3,
         "nombre": "Un mundo feliz",
         "autor": "Aldous Huxley",
         "precio": 950,
-        "imagen": "./img/logo.png"
+        "stock":10,
+        "imagen": "logo.png"
      },
      {
         "id": 4,
         "nombre": "Orgullo y prejuicio",
         "autor": "Jane Austen",
         "precio": 950,
-        "imagen": "./img/logo.png"
+        "stock":10,
+        "imagen": "logo.png"
      },
      {
         "id": 5,
         "nombre": "Crimen y castigo",
         "autor": "Fiódor Dostoyevski",
         "precio": 950,
-        "imagen": "./img/logo.png"
+        "stock":10,
+        "imagen": "logo.png"
      },
      {
         "id": 6,
         "nombre": "Lolita",
         "autor": "Vladimir Nabokov",
         "precio": 950,
-        "imagen": "./img/logo.png"
+        "stock":10,
+        "imagen": "logo.png"
      },
      {
         "id": 7,
         "nombre": "Ulises",
         "autor": "James Joyce",
         "precio": 950,
-        "imagen": "./img/logo.png"
+        "stock":10,
+        "imagen": "logo.png"
      },
      {
         "id": 8,
         "nombre": "Madame Bovary",
         "autor": "Gustave Flaubert",
         "precio": 950,
-        "imagen": "./img/logo.png"
+        "stock":10,
+        "imagen": "logo.png"
      },
      {
         "id": 9,
         "nombre": "En busca del tiempo perdido",
         "autor": "Marcel Proust",
         "precio": 950,
-        "imagen": "./img/logo.png"
+        "stock":10,
+        "imagen": "logo.png"
      }
   ]
